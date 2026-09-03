@@ -2,7 +2,7 @@
 """Health check script — simulates a Platform Ops pipeline task."""
 import json, datetime, sys
 
-SERVERS = ["web-01", "web-02", "db-01", "api-01"]
+SERVERS = ["web-01", "db-01", "api-01"]
 
 def main():
     results = []
