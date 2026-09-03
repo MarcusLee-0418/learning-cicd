@@ -19,4 +19,4 @@ jobs:
     needs: health-check-job
     steps:
       - name: deployment
-        run: echo"all server is health! deploy to the environment successfully!"
+        run: echo "all server is health! deploy to the environment successfully!"
