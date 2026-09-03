@@ -14,14 +14,8 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: read secret key
-        env:
-          MY_API_KEY: ${{ secrets.MY_SECRET_KEY}}
-        run: |
-          echo "extracting my secret key..."
-          echo "my secret key is $MY_API_KEY"
-      #- name: execute the health check script
-      #  run: python3 healthCheck.py
+      - name: execute the health check script
+        run: python3 healthCheck.py
   deploy-job:
     runs-on: ubuntu-latest
     needs: health-check-job
