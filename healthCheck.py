@@ -1,4 +1,4 @@
-improt json, datetime, sys
+import json, datetime, sys
 SERVERS = ["web-01","web-02","db-01","api-01"]
 def main():
   results = []
