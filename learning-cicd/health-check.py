@@ -2,12 +2,12 @@
 """Health check script — simulates a Platform Ops pipeline task."""
 import json, datetime, sys
 
-SERVERS = ["web-01", "db-01", "api-01"]
+SERVERS = ["web-01", "web-02",  "api-01"]
 
 def main():
     results = []
     for server in SERVERS:
-        status = "UP"
+        status = "UP" if server != "db-01" else "DOWN"
         results.append({"server": server, "status": status})
         print(f"{server}: {status}")
 
