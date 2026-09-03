@@ -17,7 +17,7 @@ def main():
 
   with open("health-report.json","w") as f:
     json.dump(report, f, indent=2)
-  percent = {report['up']}/{report['total']} * 100
+  percent = report['up']/report['total'] * 100
   print(f"\nReport: {percent}% servers UP")
 
 if __name__ == "__main__":
