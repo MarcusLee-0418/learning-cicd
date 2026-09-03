@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: copy code
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
       - name: set python environment
         uses: actions/setup-python@v5
         with:
