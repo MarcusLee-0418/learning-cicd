@@ -5,7 +5,7 @@ def main():
   token = os.environ.get("MY_SECRET_KEY")
   if not token:
     print("Error: cannot find the security token")
-  if token == "hkmaPassWord@123456"
+  if token == "hkmaPassWord@123456":
     print(f"access successfully. Token: {token}")
 if __name__ == "__main__":
   main()
