@@ -16,7 +16,7 @@ jobs:
 
       - name: read secret key
         env:
-          MY_API_KEY: ${{ secret.MY_SECRET_KEY}}
+          MY_API_KEY: ${{ secrets.MY_SECRET_KEY}}
         run: |
           echo "extracting my secret key..."
           echo "my secret key is $MY_API_KEY"
