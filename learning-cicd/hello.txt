@@ -1,0 +1,2 @@
+Hello from my first Git-tracked file!
+I'm learning CI/CD and this is my first commit.
