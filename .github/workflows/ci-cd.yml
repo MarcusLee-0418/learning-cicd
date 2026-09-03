@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: 🏥 Run health check
-        run: python3 health-check.py
+        run: python3 learning-cicd/health-check.py
       - name: 📤 Upload report
         uses: actions/upload-artifact@v4
         with:
