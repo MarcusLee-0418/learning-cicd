@@ -1,0 +1,20 @@
+name: learn about my first pipeline
+on:
+  push:
+    branches: [main]
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: copy code to the virtual machine
+        uses: actions/checkout@v4
+
+      - name: print the welcome message
+        run: echo "Hello world"
+
+      - name: checking system information
+        run: |
+          echo "The current path is :"
+          pwd
+          echo "List all file as follow:"
+          ls -la
