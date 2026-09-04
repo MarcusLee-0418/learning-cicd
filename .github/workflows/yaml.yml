@@ -16,4 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: test-job
     steps:
-      - run: echo "passing test, deploy now"
+      - name: step 1
+        id: get_date
+        run: echo "today=$(date+'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: step 2
+        run: echo " deploy date is ${{ steps.get_date.outputs.today}}"
