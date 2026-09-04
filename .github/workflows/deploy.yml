@@ -3,6 +3,7 @@ name: automatically deploy webpage
 on:
   push:
     branches: [main]
+    
 permissions:
   contents: read
   pages: write

@@ -1,34 +1,34 @@
-name: learn matrix and test the pipeline
+# name: learn matrix and test the pipeline
 
-on:
-  push:
-    branches: [main]
+# on:
+#   push:
+#     branches: [main]
 
-jobs:
-  matrix-check-job:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ['3.8','3.10','3.12']
-    steps:
-      - name: copy code
-        uses: actions/checkout@v4
+# jobs:
+#   matrix-check-job:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         python-version: ['3.8','3.10','3.12']
+#     steps:
+#       - name: copy code
+#         uses: actions/checkout@v4
         
-      - name: set python environment
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
+#       - name: set python environment
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: ${{ matrix.python-version }}
 
-      - name: execute the health check script
-        env:
-          SECRET_TOKEN: ${{ secrets.MY_SECRET_KEY}}
-        run: 
-          python3 --version
-          python3 healthCheck.py
+#       - name: execute the health check script
+#         env:
+#           SECRET_TOKEN: ${{ secrets.MY_SECRET_KEY}}
+#         run: 
+#           python3 --version
+#           python3 healthCheck.py
 
-  deploy-job:
-    runs-on: ubuntu-latest
-    needs: matrix-check-job
-    steps:
-      - name: deployment
-        run: echo "all server is health! deploy to the environment successfully!"
+#   deploy-job:
+#     runs-on: ubuntu-latest
+#     needs: matrix-check-job
+#     steps:
+#       - name: deployment
+#         run: echo "all server is health! deploy to the environment successfully!"
