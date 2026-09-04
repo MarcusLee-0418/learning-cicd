@@ -1,4 +1,4 @@
-name: YAML Practice 1
+name: YAML Practice 2
 on:
   push:
     branches: [main]
@@ -7,10 +7,11 @@ env:
   ProjectName: "My Web"
 
 jobs:
-  say-hello:
+  conditional-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Custom Message
-        run: |
-          echo "Project name: ${{ env.ProjectName }}"
-          echo "User: ${{ github.actor }}"
+      - name: only execute in main
+        if: github.ref == 'refs/heads/main'
+        run: echo "It is run in main"
+      - name: execute in any branch
+        run: echo "hello world"
