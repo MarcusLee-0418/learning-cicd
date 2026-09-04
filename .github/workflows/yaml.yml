@@ -1,4 +1,4 @@
-name: YAML Practice 2
+name: YAML Practice 3
 on:
   push:
     branches: [main]
@@ -7,11 +7,13 @@ env:
   ProjectName: "My Web"
 
 jobs:
-  conditional-job:
+  test-job:
     runs-on: ubuntu-latest
     steps:
-      - name: only execute in main
-        if: github.ref == 'refs/heads/main'
-        run: echo "It is run in main"
-      - name: execute in any branch
-        run: echo "hello world"
+      - run: echo "testing execution unit..."
+  
+  deploy-job:
+    runs-on: ubuntu-latest
+    needs: test-job
+    steps:
+      - run: echo "passing test, deploy now"
