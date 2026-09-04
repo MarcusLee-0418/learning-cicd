@@ -1,26 +1,25 @@
 name: automatically deploy webpage
 
 on:
-    push:
-        branches:[main]
+  push:
+    branches:[main]
 permission:
-    contents: read
-    pages: write
-    id-token: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-    deploy-web:
-        runs-on: ubuntu-latest
-        steps:
-            - name: copy code
-              uses: actions/chechout@v4
+  deploy-web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: copy code
+        uses: actions/chechout@v4
             
-            - name: initialise Github Pages environment
-              uses: actions/configure-pages@v5
+      - name: initialise Github Pages environment
+        uses: actions/configure-pages@v5
 
-            - name: packing web file
-              uses: actions/upload-pages-artifact@v3
+      - name: packing web file
+        uses: actions/upload-pages-artifact@v3
 
-            - nmae: publish
-              uses: actions/deploy-pages@v4
-              
+      - nmae: publish
+        uses: actions/deploy-pages@v4
